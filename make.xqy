@@ -13,7 +13,7 @@ let $kanjis := for $f in //character[query_code/q_code[@qc_type="skip"]]
 			", "
 		)}"/>
 
-return concat("[",string-join(for $st in (1,2,3,4)
+return concat("kdict = [",string-join(for $st in (1,2,3,4)
 	return fn:concat(
 		"[",
 		string-join(
@@ -33,4 +33,4 @@ return concat("[",string-join(for $st in (1,2,3,4)
 		"]
 
 "),
-	","),"]")
+	","),"];")

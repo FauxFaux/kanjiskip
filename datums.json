@@ -1,4 +1,4 @@
-[[{"s":[4,6],"l":"時","m":"time, hour"},
+kdict = [[{"s":[4,6],"l":"時","m":"time, hour"},
 {"s":[5,4],"l":"政","m":"politics, government"},
 {"s":[3,3],"l":"行","m":"going, journey"},
 {"s":[4,3],"l":"社","m":"company, firm, office, association, shrine"},
@@ -12158,4 +12158,4 @@
 {"s":[12,4],"l":"睂","m":""},
 {"s":[8,1],"l":"靣","m":""}]
 
-]
+];
