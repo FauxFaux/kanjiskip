@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<script src="datums.js" type="text/javascript" charset="UTF-8"></script>
+	<script>
+		function get(id) { return document.getElementById(id); }
+		function u() {
+			var type = get('type').value;
+			var two = get('two').value;
+			var three = get('three').value;
+			var dict = kdict[type-1];
+			var res = get('results');
+			var s = '';
+			for (var i = 0; i < dict.length; ++i)
+				if (dict[i].s[0]==two && dict[i].s[1] == three)
+					s += dict[i].l + ": " + dict[i].m + "<br/> ";
+			res.innerHTML = s;
+		}
+	</script>
+</head>
+<body>
+	type: <input id="type" min="1" max="4" type="number" onchange="u()" value="1"/>
+	2: <input id="two" type="number" onchange="u()" value="3"/>
+	3: <input id="three" type="number" onchange="u()" value="3"/>
+	<div id='results'/>
+</body>
+</html>
