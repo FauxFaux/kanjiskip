@@ -9,6 +9,10 @@
 		function u() {
 			var type = get('type').value;
 			var two = get('two').value;
+			if (type.length != 1) {
+				get('three').value = type.substring(2);
+				type = type.substring(0,1);
+			}
 			var three = get('three').value;
 			var dict = kdict[type-1];
 			var res = get('results');
@@ -31,7 +35,19 @@
 	<a href="https://en.wikipedia.org/wiki/Kodansha_Kanji_Learner%27s_Dictionary#SKIP">wikipedia</a>
 	<input type="button" onclick="resi(1)" value="+"/>
 	<input type="button" onclick="resi(-1)" value="-"/>
-	type (LR, UD, encl, solid): <input id="type" min="1" max="4" size="1" type="number" onchange="u()" value="1"/>
+	type: <select id="type" onchange="u()">
+		<optgroup label="Sane">
+			<option value="1" selected="selected">LR (e.g. 化 仇)</option>
+			<option value="2">UD (e.g. 六 兮)</option>
+			<option value="3">Enc (e.g. 月 匹 仄)</option>
+		</optgroup>
+		<optgroup label="Other">
+			<option value="4-1">Top (e.g. 耳 子)</option>
+			<option value="4-2">Bot (e.g. 上 丘)</option>
+			<option value="4-3">Cen (e.g. 本 中)</option>
+			<option value="4-4">etc. (e.g. 女 丸)</option>
+		</optgroup>
+	</select>
 	2: <input id="two" type="number" onchange="u()" value="3" size="3" min="1" max="22"/>
 	3: <input id="three" type="number" onchange="u()" value="3" size="3" min="1" max="28"/>
 	<div id='results'/>
